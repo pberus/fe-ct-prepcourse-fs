@@ -5,10 +5,8 @@ function obtenerMayor(x, y) {
    // Retornar el número más grande.
    // Si son iguales, retornar cualquiera de los dos.
    // Tu código:
-   if (x<y){
-      return y
-   } else if(y<x){
-      return x
+   if (x !== y){
+      return Math.max (x,y)
    } else {
       return x || y
    }
@@ -50,13 +48,14 @@ function saludo(idioma) {
    // Si "idioma" es "ingles", devuelve "Hello!".
    // Si "idioma" no es ninguno de los anteriores o es `undefined` devuelve "Hola!".
    // Tu código:
-   if (idioma == "aleman"){
-      return "Guten Tag!"
-   } else if (idioma == "mandarin"){
-      return "Ni Hao!"
-   } else if (idioma == "ingles"){
-      return "Hello!"
-   } else {
+   switch (idioma){
+      case "aleman":
+         return "Guten Tag!"
+      case "mandarin": 
+         return "Ni Hao!"
+      case "ingles": 
+         return "Hello!"
+      default:
       return "Hola!"
    }
 }
@@ -73,19 +72,14 @@ function colors(color) {
    switch (color) {
       case "blue":
          return "This is blue"   
-      break;
       case "red":
          return "This is red"
-      break;
       case "green":
          return "This is green"   
-      break;
       case "orange":
          return "This is orange"
-      break;   
       default:
          return "Color not found"
-      break;
     }
 }
 
@@ -162,7 +156,7 @@ function esPrimo(num) {
    // [Nota]: los números negativos, 0 y 1 NO son números primos.
    // Tu código:
    if (num <= 1) return false;
-   for (let i = 2; i < num; i++) {
+   for (i = 2; i < num; i++) {
      if (num % i === 0) {
        return false;
      }
@@ -186,11 +180,8 @@ function tieneTresDigitos(num) {
    // Si el número recibido tiene tres dígitos retornar true.
    // Caso contrario, retornar false.
    // Tu código:
-   if (num >99 && num <1000){
-      return true
-   } else {
-      return false
-   }
+   if (num >99 && num <1000) return true
+   return false
 }
 
 function doWhile(num) {
@@ -199,12 +190,11 @@ function doWhile(num) {
    // Utilizar el bucle Do-While.
    // Tu código:
    var contador =0
-   var numero = num
    do{
-      numero +=5
+      num +=5
       contador ++
    } while (contador <8)
-   return numero
+   return num
 }
 
 

@@ -22,7 +22,10 @@ function incrementarPorUno(array) {
    // El arreglo recibido por parámetro contiene números.
    // Retornar un arreglo con los elementos incrementados en +1.
    // Tu código:
-   return array.map((num) => { return num + 1 })
+   for(i = 0;i <array.length; i++){
+      array[i]++
+   }
+   return array
 }
 
 function agregarItemAlFinalDelArray(array, elemento) {
@@ -121,11 +124,8 @@ function diaDeLaSemana(numeroDeDia) {
    // Realiza una función que, dado el número del día de la semana, retorne: "Es fin de semana"
    // si el día corresponde a "Sábado" o "Domingo", y "Es dia laboral" en caso contrario.
    // Tu código:
-   if (numeroDeDia == 1 || numeroDeDia ==7){
-      return "Es fin de semana"
-   } else {
-      return "Es dia laboral"
-   }
+   if (numeroDeDia == 1 || numeroDeDia ==7) return "Es fin de semana"
+   else return "Es dia laboral"
 }
 
 function empiezaConNueve(num) {
@@ -133,12 +133,8 @@ function empiezaConNueve(num) {
    // Debe retornar true si el entero inicia con 9 y false en otro caso.
    // Tu código:
    var numSeparado = num.toString().split("")
-   if (numSeparado[0] == 9) {
-      return true
-   } else {
-      return false
-   }
-   num.join("")
+   if (numSeparado[0] == 9) return true
+   else return false
 }
 
 function todosIguales(array) {
@@ -147,11 +143,8 @@ function todosIguales(array) {
    // Tu código:
    var elemento = array[0]
    for (i =1;i<array.length;i++){
-      if (array[i] !== elemento) {
-         return false
-      } else {
-         return true
-      }
+      if (array[i] !== elemento) return false
+      else return true
    }
 }
 
@@ -166,10 +159,8 @@ function mesesDelAño(array) {
          nuevoArray.push(array[i])
       }
    }
-   if (nuevoArray.length <3){
-      return "No se encontraron los meses pedidos"
-   }
-      return nuevoArray
+   if (nuevoArray.length <3) return "No se encontraron los meses pedidos"
+   return nuevoArray
 }
 
 function tablaDelSeis() {
@@ -191,7 +182,8 @@ function mayorACien(array) {
       if (array[i]>100){
          nuevoArray.push(array[i])
       }
-   } return nuevoArray
+   } 
+   return nuevoArray
 }
 
 /* ----------------------------------------------------------------------------------
@@ -205,6 +197,14 @@ function breakStatement(num) {
    // la ejecución y retornar el string: "Se interrumpió la ejecución".
    // [PISTA]: utiliza el statement 'break'.
    // Tu código:
+   var array =[]
+   for (i=1; i<11; i++){
+      num = num +2
+      if (num == i) break
+      array.push(num)
+   }
+   if (i<10) return "Se interrumpió la ejecución"
+   return array
 }
 
 function continueStatement(num) {
@@ -214,6 +214,13 @@ function continueStatement(num) {
    // se continua con la siguiente iteración.
    // [PISTA]: utiliza el statement 'continue'.
    // Tu código:
+   var array =[]
+   for (i=1; i<11; i++){
+      if (i == 5) continue
+      num = num +2 
+      array.push(num)
+   }
+   return array
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/

@@ -10,7 +10,9 @@ function crearGato(nombre, edad) {
    var gato = {
       nombre : nombre ,
       edad : edad ,
-      meow : function(){return "Meow!"}
+      meow : () => {
+         return "Meow!"
+      }
    }
    return gato
 }
@@ -50,8 +52,7 @@ function multiplicarNumeroDesconocidoPorCinco(objetoMisterioso) {
    // El parámetro "objetoMisterioso" posee una propiedad con el nombre "numeroMisterioso".
    // Debes multiplicar este número por 5 y retornar el resultado.
    // Tu código:
-   var numPorCinco = objetoMisterioso.numeroMisterioso *5
-   return numPorCinco
+   return objetoMisterioso.numeroMisterioso *5
 }
 
 function eliminarPropiedad(objeto, propiedad) {
@@ -66,34 +67,24 @@ function tieneEmail(objetoUsuario) {
    // Verifica si el "objetoUsuario", en su propiedad "email", posee un valor definido.
    // En ese caso retornar true. Caso contrario, false.
    // Tu código:
-   if (objetoUsuario.email != null){
-      return true
-   } else {
-      return false
-   }
+   if (objetoUsuario.email != null) return true
+   else return false
 }
 
 function tienePropiedad(objeto, propiedad) {
    // Verifica si el objeto recibido posee una propiedad con el mismo nombre que el parámetro "propiedad".
    // En ese caso retornar true. Caso contrario, false.
    // Tu código:
-   var tienePropiedad = objeto.hasOwnProperty([propiedad])
-   if (tienePropiedad == true){
-      return true
-   } else {
-      return false
-   }
+   if (objeto.hasOwnProperty([propiedad])) return true
+   else return false
 }
 
 function verificarPassword(objetoUsuario, password) {
    // Verifica si la propiedad "password" del "objetoUsuario" coincide con el parámetro "password".
    // En ese caso retornar true. Caso contrario, false.
    // Tu código:
-   if (objetoUsuario.password == [password]){
-      return true 
-   } else {
-      return false
-   }
+   if (objetoUsuario.password == password) return true 
+   else return false
 }
 
 function actualizarPassword(objetoUsuario, nuevaPassword) {
@@ -133,7 +124,7 @@ function sumarLikesDeUsuario(objetoUsuario) {
    // Debes sumar los likes de todos los post y retornar el resultado.
    // Tu código:
    var contador = 0
-   for (i=0;i<objetoUsuario["posts"].length;i++){
+   for (i=0;i<objetoUsuario.posts.length;i++){
       contador = contador + objetoUsuario.posts[i].likes
    }
    return contador
